@@ -1,0 +1,58 @@
+/* Heimdall design tokens. White page, navy ink, blue for the guard, red for the threat.
+ * Green and amber appear only as data states (passed, held for review). See DESIGN.md. */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --section-gap-s: 96px; --section-gap: 128px; --section-gap-l: 160px; --gap-columns: 24px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.5rem, 3.4vw + 1rem, 4.25rem);
+  --text-display: clamp(3.25rem, 6.2vw + 0.75rem, 7rem);
+  --text-section: clamp(2.25rem, 3vw + 1rem, 4rem);
+  --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem);
+  --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.3125rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --container: 1360px; --gutter: 40px;
+  --z-base: 0; --z-raised: 1; --z-sticky: 20; --z-sticky-nav: 30; --z-overlay: 40; --z-toast: 50; --z-tooltip: 60;
+
+  /* Brand */
+  --color-navy: #0A0F1E;
+  --color-blue: #2563EB;
+  --color-blue-deep: #1D4ED8;
+  --color-blue-soft: #EEF4FF;
+  --color-red: #DC2626;
+  --color-red-deep: #B91C1C;
+  --color-red-soft: #FEF1F1;
+
+  /* Surfaces and ink */
+  --color-paper: #FFFFFF;
+  --color-paper-2: #F6F8FB;
+  --color-paper-3: #EDF1F7;
+  --color-ink: var(--color-navy);
+  --color-ink-2: #1E293B;
+  --color-muted: #475569;
+  --color-rule: #E2E8F0;
+  --color-rule-2: #CBD5E1;
+  --color-field: #64748B; /* input and control edges: 4.7:1 on white */
+  --color-ghost: #8493A8; /* large decorative type only: 3.1:1 on white */
+  --color-focus: var(--color-blue);
+
+  /* Data states. Each passes 4.5:1 as text on white and on its own soft tint. */
+  --color-cool: var(--color-blue);
+  --color-cool-soft: var(--color-blue-soft);
+  --color-bad: var(--color-red-deep);
+  --color-bad-soft: var(--color-red-soft);
+  --color-ok: #047857;
+  --color-ok-soft: #ECFBF4;
+  --color-accent: #B45309;
+  --color-accent-soft: #FFF7E6;
+  --color-accent-ink: #FFFFFF;
+
+  --font-display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --font-outlier: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --radius-card: 0; --radius-pill: 2px; --rule-hair: 1px;
+  --shadow-card: none;
+  --shadow-raise: 0 1px 2px rgb(10 15 30 / 0.05), 0 18px 40px -24px rgb(10 15 30 / 0.22);
+  --tracking-display: 0.005em; --tracking-label: 0.08em; --display-weight: 800;
+}

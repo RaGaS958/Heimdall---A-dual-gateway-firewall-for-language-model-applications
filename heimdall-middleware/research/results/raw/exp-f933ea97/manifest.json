@@ -1,0 +1,83 @@
+{
+  "experiment_id": "exp-f933ea97",
+  "experiment_version": "4.0",
+  "name": "ExpA_B1 \u2014 G1 Input Security Only",
+  "description": "CONFIRMATORY. Input security only (G1 active, G2 disabled). All G2 output security layers skipped. Establishes G1-only reference. H-01: B1 should have lower ASR than B0. H-02: B5 should have lower ASR than B1. RQ4: What contribution does each gateway make?\n",
+  "config_hash": "afd0e90fc3e3b845c36497a4ae95f20cd37900f8a4867207b003265b26b2b66b",
+  "created_at": 1791106331.6170044,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "local",
+    "model": "heimdall-g1-pipeline",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B1",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC"
+    ],
+    "disabled_layers": [],
+    "configuration": {
+      "baseline": "B1",
+      "description": "G1 input security only \u2014 G2 output layers disabled"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider",
+      "G2 skip_layers applied in HTTP adapter; mock uses skip_layers set for layer reporting only",
+      "In mock mode, all layer disabling affects enabled_layers metadata only"
+    ]
+  }
+}

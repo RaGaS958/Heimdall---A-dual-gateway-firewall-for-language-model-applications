@@ -1,0 +1,90 @@
+{
+  "experiment_id": "exp-3f8d0c9b",
+  "experiment_version": "4.0",
+  "name": "ExpC_Mutation_Lexical \u2014 Lexical Mutations",
+  "description": "EXPLORATORY. Evaluate bypass rate for lexical mutation family. Techniques: case, whitespace, homoglyph variations. H-04: Mutations change observed ASR vs unmutated attacks. RQ2: How robust is HEIMDALL against systematic attack mutations?\n",
+  "config_hash": "fb43a17f0521bfc3e915d325b88a7b44046cfec6f79ca43f859433fde683f6a7",
+  "created_at": 1790832665.7578096,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "local",
+    "model": "heimdall-g1-pipeline",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B5",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT"
+    ],
+    "disabled_layers": [
+      "AGENTIC"
+    ],
+    "configuration": {
+      "baseline": "B5",
+      "description": "Full HEIMDALL \u2014 no Immune"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": true,
+    "version": "1.0",
+    "families": [
+      "lexical"
+    ],
+    "techniques": [
+      "case",
+      "whitespace",
+      "homoglyph"
+    ],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider \u2014 lexical mutations may or may not affect keyword matching",
+      "Semantic (L3) mutation not implemented in mock mode",
+      "Mutation applied to adversarial cases only; benign cases not mutated"
+    ]
+  }
+}

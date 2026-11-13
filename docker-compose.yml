@@ -1,0 +1,106 @@
+# Heimdall: the whole stack with one command.
+#
+#   cp .env.example .env        # fill in the secrets and at least one provider key
+#   docker compose up -d --build
+#   open http://localhost:8080
+#
+# Only the web service publishes a port. The middleware, the model backend and Redis talk on a
+# private network. Put TLS in front of port 8080 for anything beyond your own machine.
+
+name: heimdall
+
+
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:?REDIS_PASSWORD is required}"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" --no-auth-warning ping | grep -q PONG"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+    restart: unless-stopped
+    networks: [internal]
+
+  backend:
+    build: ./multi-llm-backend
+    environment:
+      HEIMDALL_ENV: production
+      INTERNAL_AUTH_KEY: ${INTERNAL_AUTH_KEY:?INTERNAL_AUTH_KEY is required}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-20b}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.5-flash}
+      MISTRAL_MODEL: ${MISTRAL_MODEL:-mistral-small-latest}
+      MIDDLEWARE_URL: http://middleware:7860
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://127.0.0.1:7860/health', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+    restart: unless-stopped
+    networks: [internal]
+
+  middleware:
+    build: ./heimdall-middleware
+    depends_on:
+      redis: { condition: service_healthy }
+      backend: { condition: service_healthy }
+    environment:
+      HEIMDALL_ENV: production
+      ADMIN_KEY: ${ADMIN_KEY:?ADMIN_KEY is required}
+      INTERNAL_AUTH_KEY: ${INTERNAL_AUTH_KEY:?INTERNAL_AUTH_KEY is required}
+      SESSION_SIGNING_KEY: ${SESSION_SIGNING_KEY:?SESSION_SIGNING_KEY is required}
+      # The arbiter calls the providers directly, so it needs the same keys.
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-20b}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.5-flash}
+      MISTRAL_MODEL: ${MISTRAL_MODEL:-mistral-small-latest}
+      MULTI_LLM_BACKEND_URL: http://backend:7860
+      USE_FAKE_REDIS: "false"
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379/0
+      FRONTEND_URL: ${PUBLIC_URL:-http://localhost:8080}
+      TRUSTED_PROXY_HOPS: "1"                 # nginx in the web service sets X-Forwarded-For
+      EMBEDDINGS_ENABLED: ${EMBEDDINGS_ENABLED:-true}
+      FASTEMBED_CACHE_PATH: /home/user/app/state/models
+      RESEARCH_MODE: "false"
+      ENABLE_DEBUG_CONSOLE: "false"
+      HONEYPOT_ENABLED: ${HONEYPOT_ENABLED:-false}
+      # Human review (see knowledge-base/06-operations/operations.md)
+      REVIEW_ON_ARBITER_FAILURE: ${REVIEW_ON_ARBITER_FAILURE:-review}
+      ARBITER_CONFLICT_ACTION: ${ARBITER_CONFLICT_ACTION:-review}
+      G2_CODE_BLOCKS: ${G2_CODE_BLOCKS:-strip}
+      # The review queue, labels and audit log live in Redis (USE_FAKE_REDIS=false above). These
+      # paths are the fallback if Redis is unreachable at start-up, plus the honeypot log and model cache.
+      REVIEW_QUEUE_PATH: /home/user/app/state/review_queue.json
+      REVIEWER_LABELS_PATH: /home/user/app/state/reviewer_labels.jsonl
+      AUDIT_LOG_PATH: /home/user/app/state/admin_audit.jsonl
+      HONEYPOT_LOG_PATH: /home/user/app/state/honeypot_logs.jsonl
+    volumes:
+      - middleware-state:/home/user/app/state
+    restart: unless-stopped
+    networks: [internal]
+
+  web:
+    build: ./heimdall-frontend
+    depends_on:
+      middleware: { condition: service_healthy }
+    ports:
+      - "${HEIMDALL_BIND:-127.0.0.1}:${HEIMDALL_PORT:-8080}:8080"
+    restart: unless-stopped
+    networks: [internal]
+
+volumes:
+  redis-data:
+  middleware-state:
+
+networks:
+  internal:

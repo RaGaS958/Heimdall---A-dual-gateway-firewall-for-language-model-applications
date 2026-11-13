@@ -1,0 +1,88 @@
+{
+  "experiment_id": "exp-d387b988",
+  "experiment_version": "4.0",
+  "name": "ExpK_Benign_Utility \u2014 Benign Utility Evaluation",
+  "description": "EXPLORATORY. Evaluate false positive rate and benign acceptance across defense configurations. Measures security/utility tradeoff. H-11: Higher-security configs may incur higher FPR. RQ6: Security/utility/latency tradeoffs.\n",
+  "config_hash": "f242dcac8563b7f430c169e79f97cf6c7d5dd7d0f78ea644d5c7ae4b412add09",
+  "created_at": 1790770938.051061,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "mock",
+    "model": "mock-v1",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B5",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC",
+      "O1_CACHE",
+      "O2_LEAKAGE",
+      "O3_BEHAVIOR",
+      "O4_TOOL"
+    ],
+    "disabled_layers": [],
+    "configuration": {
+      "baseline": "B5",
+      "description": "Full HEIMDALL \u2014 utility measurement focus"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Benign corpus: 17 cases only \u2014 small N for FPR estimation",
+      "Wilson CI reported for FPR given small N",
+      "Mock provider may misclassify benign cases containing security-adjacent terms",
+      "Benign corpus ben_012 (French translation) may trigger keyword matching"
+    ]
+  }
+}

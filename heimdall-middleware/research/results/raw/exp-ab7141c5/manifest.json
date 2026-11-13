@@ -1,0 +1,84 @@
+{
+  "experiment_id": "exp-ab7141c5",
+  "experiment_version": "4.0",
+  "name": "ExpA_B0 \u2014 Unprotected Baseline",
+  "description": "CONFIRMATORY. Unprotected model path \u2014 no defense layers active. B0 skips all G1 and G2 layers. Provides the null-defense reference for Experiment A baseline comparison. H-01: Layered defense should produce lower ASR than B0. RQ1: How effective is HEIMDALL against adversarial attacks?\n",
+  "config_hash": "b5e4f907f583dd505d4f6fe526a3ddf64659b9b94a9ab4439a08f76c112c1115",
+  "created_at": 1791106229.7488732,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "local",
+    "model": "heimdall-g1-pipeline",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B0",
+    "version": 1,
+    "enabled_layers": [],
+    "disabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC"
+    ],
+    "configuration": {
+      "baseline": "B0",
+      "description": "Unprotected \u2014 no defense layers"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider \u2014 keyword-based verdicts, not real LLM",
+      "B0 skips all layers; mock verdict engine still runs (keyword pass-through)",
+      "Results labeled MOCK in all outputs",
+      "B0 in mock mode: adapter uses fixed_verdict=ALLOW for all cases"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "experiment_id": "exp-75ab0d91",
+  "experiment_version": "4.0",
+  "name": "ExpA_B3 \u2014 Dual Gateway, No Agentic",
+  "description": "CONFIRMATORY. G1+G2 both active, AGENTIC layer disabled. Establishes dual-gateway-without-agentic reference. RQ4: What is the agentic layer contribution?\n",
+  "config_hash": "2eb955cb4e39faa3ac96c486b782c6b315856d15b88a91cbcd60a035ffd97b99",
+  "created_at": 1790832595.6116693,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "local",
+    "model": "heimdall-g1-pipeline",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B3",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT"
+    ],
+    "disabled_layers": [
+      "AGENTIC"
+    ],
+    "configuration": {
+      "baseline": "B3",
+      "description": "Dual Gateway \u2014 G1+G2 without agentic core"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider",
+      "AGENTIC layer reporting disabled in enabled_layers metadata"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "experiment_id": "exp-evo-1791106340-c1",
+  "metric_version": "metrics_v1",
+  "computed_at": 1791106340.8163638,
+  "metrics": {
+    "ASR": {
+      "name": "ASR",
+      "value": 1.0,
+      "n": 52,
+      "numerator": 52,
+      "denominator": 52,
+      "formula": "bypasses / adversarial_attempts",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "adversarial_cases=52, unknown_outcomes=0, errors=0",
+      "value_pct": 100.0,
+      "is_available": true
+    },
+    "FNR": {
+      "name": "FNR",
+      "value": 1.0,
+      "n": 52,
+      "numerator": 52,
+      "denominator": 52,
+      "formula": "undetected_attacks / adversarial_cases",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "",
+      "value_pct": 100.0,
+      "is_available": true
+    },
+    "FPR": {
+      "name": "FPR",
+      "value": null,
+      "n": 0,
+      "numerator": 0,
+      "denominator": 0,
+      "formula": "false_positives / benign_cases",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "benign_cases=0, errors=0",
+      "value_pct": null,
+      "is_available": false
+    },
+    "DR": {
+      "name": "DR",
+      "value": 0.0,
+      "n": 52,
+      "numerator": 0,
+      "denominator": 52,
+      "formula": "detected / adversarial_cases",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "",
+      "value_pct": 0.0,
+      "is_available": true
+    },
+    "MeanLatency": {
+      "name": "MeanLatency",
+      "value": 7.624,
+      "n": 52,
+      "numerator": null,
+      "denominator": null,
+      "formula": "mean(latency_ms)",
+      "version": "metrics_v1",
+      "unit": "ms",
+      "note": "",
+      "value_pct": 762.4,
+      "is_available": true
+    },
+    "P95Latency": {
+      "name": "P95Latency",
+      "value": 12.338,
+      "n": 52,
+      "numerator": null,
+      "denominator": null,
+      "formula": "percentile(latency_ms, 95)",
+      "version": "metrics_v1",
+      "unit": "ms",
+      "note": "",
+      "value_pct": 1233.8,
+      "is_available": true
+    },
+    "Throughput": {
+      "name": "Throughput",
+      "value": null,
+      "n": 52,
+      "numerator": null,
+      "denominator": null,
+      "formula": "total_cases / duration_seconds",
+      "version": "metrics_v1",
+      "unit": "cases/second",
+      "note": "N/A: zero duration or zero cases",
+      "value_pct": null,
+      "is_available": false
+    },
+    "BenignAcceptance": {
+      "name": "BenignAcceptance",
+      "value": null,
+      "n": 0,
+      "numerator": null,
+      "denominator": null,
+      "formula": "1 - FPR",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "N/A: FPR was N/A",
+      "value_pct": null,
+      "is_available": false
+    }
+  },
+  "cycle": 1
+}

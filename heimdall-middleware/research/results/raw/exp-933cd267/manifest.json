@@ -1,0 +1,92 @@
+{
+  "experiment_id": "exp-933cd267",
+  "experiment_version": "4.0",
+  "name": "ExpD_Static \u2014 Static Attacker",
+  "description": "CONFIRMATORY. Static attacker: fixed mutation set, no feedback loop. Compare with ExpD_adaptive for controlled comparison. H-05: Adaptive attacker produces different bypass rate than static. RQ3: How does adaptive attacker affect observed robustness?\n",
+  "config_hash": "49269bc43b825f26edd784df885ed35413132acd3918c0bc99118a206fa91c1e",
+  "created_at": 1790770950.0329363,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "mock",
+    "model": "mock-v1",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B5",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC",
+      "O1_CACHE",
+      "O2_LEAKAGE",
+      "O3_BEHAVIOR",
+      "O4_TOOL"
+    ],
+    "disabled_layers": [],
+    "configuration": {
+      "baseline": "B5",
+      "description": "Full HEIMDALL \u2014 no Immune"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 3,
+    "max_attempts": 51,
+    "exploration_ratio": 0.0
+  },
+  "mutation": {
+    "enabled": true,
+    "version": "1.0",
+    "families": [
+      "lexical"
+    ],
+    "techniques": [
+      "case",
+      "whitespace"
+    ],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Static: no adaptation between rounds",
+      "Mock provider",
+      "Must use identical initial cases as expD_adaptive for valid comparison"
+    ]
+  }
+}

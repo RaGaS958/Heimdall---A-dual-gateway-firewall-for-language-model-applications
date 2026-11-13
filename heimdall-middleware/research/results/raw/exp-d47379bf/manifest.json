@@ -1,0 +1,85 @@
+{
+  "experiment_id": "exp-d47379bf",
+  "experiment_version": "4.0",
+  "name": "ExpB_Ablation_L2 \u2014 Sanitizer OFF",
+  "description": "EXPLORATORY. Ablation: L2_SANITIZE disabled. H-03: Individual layer ablation changes ASR vs B5 full. RQ4: Security layer contribution measurement.\n",
+  "config_hash": "bc4825e4474f6dc90b214fe594a82361f6d29c27b42f84024cd370c402bcb033",
+  "created_at": 1790770824.5647237,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "mock",
+    "model": "mock-v1",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B5",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC",
+      "O1_CACHE",
+      "O2_LEAKAGE",
+      "O3_BEHAVIOR",
+      "O4_TOOL"
+    ],
+    "disabled_layers": [],
+    "configuration": {
+      "baseline": "B5",
+      "description": "Full HEIMDALL with L2_SANITIZE disabled"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider \u2014 ablation affects enabled_layers metadata only"
+    ]
+  }
+}

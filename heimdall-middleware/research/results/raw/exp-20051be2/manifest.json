@@ -1,0 +1,86 @@
+{
+  "experiment_id": "exp-20051be2",
+  "experiment_version": "4.0",
+  "name": "ExpA_B4 \u2014 Dual Gateway + Agentic Core",
+  "description": "CONFIRMATORY. Dual gateway with Agentic core active, without Immune. Intermediate configuration between B3 (no Agentic) and B5 (full HEIMDALL). H-01: HEIMDALL reduces ASR vs unprotected. H-02: G1 + G2 dual gateway provides additional reduction vs single gateway. RQ1: Effectiveness vs baseline configurations.\n",
+  "config_hash": "aceecda600e5dd34ef514007d8bf5bc4129ca09ec600575ee280ee195361cace",
+  "created_at": 1790830382.7247171,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "mock",
+    "model": "mock-v1",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B4",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC",
+      "O1_CACHE",
+      "O2_LEAKAGE",
+      "O3_BEHAVIOR",
+      "O4_TOOL"
+    ],
+    "disabled_layers": [],
+    "configuration": {
+      "baseline": "B4",
+      "description": "Dual Gateway + Agentic Core (no Immune)"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider \u2014 layer configuration affects metadata only",
+      "Mock verdict identical to B3 and B5 in mock mode"
+    ]
+  }
+}

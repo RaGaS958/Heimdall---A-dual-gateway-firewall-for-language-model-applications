@@ -1,0 +1,6 @@
+{
+  "P0_vs_P1_true_asr": "P1 eliminated original deterministic blind spots but unseen mutations passed.",
+  "P1_vs_P2_true_asr": "P2-100 eliminated all unseen mutations by failing closed on Agentic invocation.",
+  "P0_vs_P1_fpr": "0% -> 0% (deterministic normalization doesn't hit the 5 benign controls).",
+  "P1_vs_P2_fpr": "0% -> 100% (sampling sent all benign cases to fail-closed Agentic blocking)."
+}

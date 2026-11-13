@@ -1,0 +1,362 @@
+{
+ "external": {
+  "attack": {
+   "n": 808,
+   "before": 310,
+   "after": 723,
+   "gained": 422,
+   "lost": 9,
+   "mcnemar_p": 4.791099128010907e-112,
+   "before_ci": [
+    0.3507592771568278,
+    0.4176684152905857
+   ],
+   "after_ci": [
+    0.871746617231105,
+    0.9141211073356514
+   ]
+  },
+  "benign": {
+   "n": 1007,
+   "before": 0,
+   "after": 2,
+   "gained": 2,
+   "lost": 0,
+   "mcnemar_p": 0.5,
+   "before_ci": [
+    0.0,
+    0.0038002585346542514
+   ],
+   "after_ci": [
+    0.0005448285904803177,
+    0.007212529215138563
+   ]
+  },
+  "pre_tuning_attack": 443,
+  "pre_tuning_benign": 2,
+  "latency": {
+   "p50_ms": 1.612,
+   "p95_ms": 49.21,
+   "max_ms": 238.654
+  }
+ },
+ "heldout": {
+  "n": 60,
+  "before": 0,
+  "after": 50,
+  "gained": 50,
+  "lost": 0,
+  "mcnemar_p": 1.7763568394002505e-15,
+  "before_ci": [
+   0.0,
+   0.060171853034227174
+  ],
+  "after_ci": [
+   0.7196838673407889,
+   0.9068682306363931
+  ]
+ },
+ "benign": {
+  "n": 100,
+  "before": 0,
+  "after": 0,
+  "gained": 0,
+  "lost": 0,
+  "mcnemar_p": 1.0,
+  "before_ci": [
+   0.0,
+   0.03699349876899627
+  ],
+  "after_ci": [
+   0.0,
+   0.03699349876899627
+  ]
+ },
+ "latency": {
+  "before": {
+   "p50_ms": 0.152,
+   "p95_ms": 0.208,
+   "max_ms": 0.58
+  },
+  "after": {
+   "p50_ms": 1.592,
+   "p95_ms": 2.77,
+   "max_ms": 4.247
+  }
+ },
+ "conditions": "Paired on identical inputs. Arbiter unavailable, so a hard signal counts as a block (the Phase 12 P2-0 condition). Embedding model not loaded, so L3 runs on its bundled lexical model. Cost is measured on one CPU core: about 2 ms for a short prompt, and a 95th percentile near 50 ms on the long prompts of the external benchmark.",
+ "rows": [
+  {
+   "name": "External benchmark, sealed half, attacks",
+   "status": "Third-party prompts; never opened, scored once after tuning froze",
+   "n": 808,
+   "before": 310,
+   "after": 723,
+   "gained": 422,
+   "lost": 9,
+   "mcnemar_p": 4.791099128010907e-112,
+   "after_ci": [
+    0.871746617231105,
+    0.9141211073356514
+   ]
+  },
+  {
+   "name": "External benchmark, sealed half, benign",
+   "status": "Third-party instructions; lower is better",
+   "n": 1007,
+   "before": 0,
+   "after": 2,
+   "gained": 2,
+   "lost": 0,
+   "mcnemar_p": 0.5,
+   "after_ci": [
+    0.0005448285904803177,
+    0.007212529215138563
+   ]
+  },
+  {
+   "name": "  garak dan",
+   "status": "Sealed half, by source",
+   "n": 6,
+   "before": 6,
+   "after": 6,
+   "gained": 0,
+   "lost": 0,
+   "mcnemar_p": 1.0,
+   "after_ci": [
+    0.6096657083436264,
+    1.0
+   ]
+  },
+  {
+   "name": "  garak inthewild jailbreak",
+   "status": "Sealed half, by source",
+   "n": 319,
+   "before": 191,
+   "after": 284,
+   "gained": 101,
+   "lost": 8,
+   "mcnemar_p": 1.2691208131800617e-21,
+   "after_ci": [
+    0.8512310941189981,
+    0.9200453115286221
+   ]
+  },
+  {
+   "name": "  garak sysprompt extraction",
+   "status": "Sealed half, by source",
+   "n": 16,
+   "before": 5,
+   "after": 11,
+   "gained": 6,
+   "lost": 0,
+   "mcnemar_p": 0.03125,
+   "after_ci": [
+    0.4440435565274822,
+    0.858353562348491
+   ]
+  },
+  {
+   "name": "  tensortrust extraction",
+   "status": "Sealed half, by source",
+   "n": 212,
+   "before": 15,
+   "after": 189,
+   "gained": 175,
+   "lost": 1,
+   "mcnemar_p": 3.695932450674364e-51,
+   "after_ci": [
+    0.8424708307035051,
+    0.9266121844891101
+   ]
+  },
+  {
+   "name": "  tensortrust hijacking",
+   "status": "Sealed half, by source",
+   "n": 255,
+   "before": 93,
+   "after": 233,
+   "gained": 140,
+   "lost": 0,
+   "mcnemar_p": 1.4349296274686127e-42,
+   "after_ci": [
+    0.8728343929822087,
+    0.9423364104583795
+   ]
+  },
+  {
+   "name": "Phase 12 adaptive mutations, attacks",
+   "status": "Held out; third scoring, text never inspected",
+   "n": 60,
+   "before": 0,
+   "after": 50,
+   "gained": 50,
+   "lost": 0,
+   "mcnemar_p": 1.7763568394002505e-15,
+   "after_ci": [
+    0.7196838673407889,
+    0.9068682306363931
+   ]
+  },
+  {
+   "name": "Phase 12 original seeds, attacks",
+   "status": "Seeds known to earlier rules",
+   "n": 12,
+   "before": 12,
+   "after": 12,
+   "gained": 0,
+   "lost": 0,
+   "mcnemar_p": 1.0,
+   "after_ci": [
+    0.757505990446902,
+    1.0
+   ]
+  },
+  {
+   "name": "Phase 12 benign prompts",
+   "status": "Held out; lower is better",
+   "n": 100,
+   "before": 0,
+   "after": 0,
+   "gained": 0,
+   "lost": 0,
+   "mcnemar_p": 1.0,
+   "after_ci": [
+    0.0,
+    0.03699349876899627
+   ]
+  },
+  {
+   "name": "External benchmark, development half, attacks",
+   "status": "Used to write rules and train the lexical model",
+   "n": 807,
+   "before": 313,
+   "after": 722,
+   "gained": 420,
+   "lost": 11,
+   "mcnemar_p": 7.776593665380072e-109,
+   "after_ci": [
+    0.8715899700328481,
+    0.9140136680431549
+   ]
+  },
+  {
+   "name": "External benchmark, development half, benign",
+   "status": "Used for training; lower is better",
+   "n": 993,
+   "before": 0,
+   "after": 0,
+   "gained": 0,
+   "lost": 0,
+   "mcnemar_p": 1.0,
+   "after_ci": [
+    0.0,
+    0.0038536307324206517
+   ]
+  },
+  {
+   "name": "heimdall_v1, attacks",
+   "status": "Used for tuning",
+   "n": 50,
+   "before": 48,
+   "after": 50,
+   "gained": 2,
+   "lost": 0,
+   "mcnemar_p": 0.5,
+   "after_ci": [
+    0.9286523998213858,
+    0.9999999999999998
+   ]
+  },
+  {
+   "name": "heimdall_v1, benign",
+   "status": "Used for tuning; lower is better",
+   "n": 17,
+   "before": 5,
+   "after": 2,
+   "gained": 0,
+   "lost": 3,
+   "mcnemar_p": 0.25,
+   "after_ci": [
+    0.032879773465990116,
+    0.3433635080603935
+   ]
+  },
+  {
+   "name": "Authored development corpus, attacks",
+   "status": "Rules written against it",
+   "n": 328,
+   "before": 109,
+   "after": 320,
+   "gained": 211,
+   "lost": 0,
+   "mcnemar_p": 6.077163357286271e-64,
+   "after_ci": [
+    0.9526176480837993,
+    0.987590368876512
+   ]
+  },
+  {
+   "name": "Authored development corpus, benign",
+   "status": "Includes 168 look-alike prompts; lower is better",
+   "n": 296,
+   "before": 36,
+   "after": 1,
+   "gained": 1,
+   "lost": 36,
+   "mcnemar_p": 5.529727786779404e-10,
+   "after_ci": [
+    0.0005966158740038096,
+    0.018885209298173496
+   ]
+  }
+ ],
+ "limits": [
+  "Gateway interception, not attack success. A prompt that passes may still fail against the model, and one that is stopped may have failed anyway.",
+  "The sealed half comes from the same sources as the half used for tuning (Tensor Trust, garak, Alpaca). It shows the rules and model generalise within those sources, not to attack styles nobody has collected yet.",
+  "Some benchmark attacks only make sense inside one application (for example, asking a door-keeper bot to say its pass phrase). A gateway that does not know the application's goal cannot recognise those.",
+  "Benign precision is measured on instruction-style prompts. On 52 authored look-alike prompts kept out of training, 1 was wrongly stopped; real chat traffic is more varied than either set.",
+  "The lexical model can now raise a strong signal alone above a calibrated score. That threshold was set on out-of-fold data from the tuning half and should be re-checked on production traffic.",
+  "The Phase 12 set has now been scored three times (39, 46, then 50 of 60). No prompt text was inspected, but repeated scoring makes it weaker evidence than the sealed external half.",
+  "The arbiter's semantic accuracy is unmeasured. No provider keys were available for this evaluation.",
+  "The embedding-based tier was not exercised on this host, so its thresholds are uncalibrated."
+ ],
+ "phase_record": [
+  {
+   "phase": "Phase 7",
+   "finding": "External reproduction audit corrected earlier overstated results."
+  },
+  {
+   "phase": "Phase 8",
+   "finding": "Agentic integrity audit bound arbiter blocks to verified live inference."
+  },
+  {
+   "phase": "Phase 9",
+   "finding": "Disabling L1 raised bypass from 3 of 52 to 50 of 52; benign false positives were 5 of 17."
+  },
+  {
+   "phase": "Phase 11",
+   "finding": "Rule patches closed known seeds but not adaptive mutations."
+  },
+  {
+   "phase": "Phase 12",
+   "finding": "End-to-end: 0 of 100 benign blocked, 35 of 72 attacks succeeded on qwen2.5:0.5b before patches, 32 of 72 after."
+  },
+  {
+   "phase": "Phase 12.1",
+   "finding": "Cross-model checks were preliminary, n=10, with benign canary echo on llama3.2:1b."
+  },
+  {
+   "phase": "Phase 13",
+   "finding": "Metric contract frozen; invalid pooled figures excluded."
+  },
+  {
+   "phase": "Phase 14",
+   "finding": "Manuscript classified READY_WITH_LIMITATIONS, with 19 claims mapped to evidence."
+  },
+  {
+   "phase": "Phase 15",
+   "finding": "First third-party benchmark. Sealed half: 723 of 808 attacks stopped (was 443 before tuning on the other half), 2 of 1007 benign stopped."
+  }
+ ]
+}

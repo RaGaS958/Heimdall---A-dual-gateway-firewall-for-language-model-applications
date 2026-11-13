@@ -1,0 +1,85 @@
+{
+  "experiment_id": "exp-210d50c5",
+  "experiment_version": "4.0",
+  "name": "ExpB_Ablation_L1 \u2014 Pattern Engine OFF",
+  "description": "EXPLORATORY. Ablation: L1_PATTERN disabled, all other layers active. Measures contribution of pattern engine to ASR and FPR. H-03: Individual layer ablation changes ASR vs B5 full. RQ4: What contribution does each security layer make?\n",
+  "config_hash": "0e51981020e580788809ba86df9aeb8f12e8204fc1a560239c935c413f25ac8a",
+  "created_at": 1791106333.8211036,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "local",
+    "model": "heimdall-g1-pipeline",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B5",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC"
+    ],
+    "disabled_layers": [
+      "L1_PATTERN"
+    ],
+    "configuration": {
+      "baseline": "B5",
+      "description": "Full HEIMDALL with L1_PATTERN disabled"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider \u2014 ablation affects enabled_layers metadata only",
+      "Mock verdict still uses full keyword set regardless of layer config",
+      "IMPORTANT: In mock mode, disabling L1 does not change verdict behavior",
+      "Comparison with B5 shows metadata difference, not functional difference"
+    ]
+  }
+}

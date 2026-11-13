@@ -1,0 +1,86 @@
+{
+  "experiment_id": "exp-7f6b4560",
+  "experiment_version": "1.0",
+  "name": "Baseline Comparison (Mock)",
+  "description": "Compare defense configurations B0 through B5 on the HeimdallV1 attack dataset using a mock provider. Establishes a reference for the security contribution of each configuration layer. RQ1: How effective is HEIMDALL against adversarial attacks? RQ4: What contribution does each security layer make?\n",
+  "config_hash": "b10fac36981a8b2d399903ca705393c2e61c43c43854682275786e29fd513ca5",
+  "created_at": 1790770182.1234999,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "unknown",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "mock",
+    "model": "mock-v1",
+    "version": "unknown",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B5",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC",
+      "O1_CACHE",
+      "O2_LEAKAGE",
+      "O3_BEHAVIOR",
+      "O4_TOOL"
+    ],
+    "disabled_layers": [],
+    "configuration": {
+      "baseline": "B5"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 68,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider used \u2014 verdicts based on keyword matching, not a real LLM",
+      "Single defense version tested at time of run",
+      "68 cases total (51 adversarial, 17 benign)"
+    ]
+  }
+}

@@ -1,0 +1,664 @@
+{
+  "llama3.2:1b": {
+    "P2-25": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.7166666666666667,
+        "valid_live_agentic_decision_rate": 0.7166666666666667,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.43333333333333335,
+        "benign_fpr_explicit": "13/30",
+        "benign_allow_rate": 0.5666666666666667,
+        "median_latency_ms": 1.261591911315918,
+        "p95_latency_ms": 1498.3205318450928,
+        "avg_agentic_latency_overhead_ms": 0.2637020377225654
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    },
+    "P1": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.5,
+        "valid_live_agentic_decision_rate": 0.5,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.0,
+        "benign_fpr_explicit": "0/10",
+        "benign_allow_rate": 1.0,
+        "median_latency_ms": 60.30106544494629,
+        "p95_latency_ms": 5023.0144739151,
+        "avg_agentic_latency_overhead_ms": 0.2898216247558594
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 1,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 2,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 1,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 10,
+        "total_valid_benign": 10
+      }
+    },
+    "P2-100": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 1.0,
+        "valid_live_agentic_decision_rate": 1.0,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 1.0,
+        "benign_fpr_explicit": "30/30",
+        "benign_allow_rate": 0.0,
+        "median_latency_ms": 0.6080865859985352,
+        "p95_latency_ms": 1.2129783630371094,
+        "avg_agentic_latency_overhead_ms": 0.1536846160888672
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    },
+    "P0": {
+      "security": {
+        "true_e2e_asr": 0.1,
+        "deterministic_non_trigger_rate": 0.2,
+        "downstream_exposure_rate": 0.2,
+        "gateway_block_rate": 0.8,
+        "actual_agentic_invocation_rate": 0.4,
+        "valid_live_agentic_decision_rate": 0.4,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.0,
+        "benign_fpr_explicit": "0/10",
+        "benign_allow_rate": 1.0,
+        "median_latency_ms": 216.80724620819092,
+        "p95_latency_ms": 18827.25932598114,
+        "avg_agentic_latency_overhead_ms": 0.2632439136505127
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 1,
+            "asr": 1.0
+          },
+          "HYPHENATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 2,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 1,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 10,
+        "total_valid_benign": 10
+      }
+    },
+    "P2-0": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.5,
+        "valid_live_agentic_decision_rate": 0.5,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.0,
+        "benign_fpr_explicit": "0/10",
+        "benign_allow_rate": 1.0,
+        "median_latency_ms": 114.280104637146,
+        "p95_latency_ms": 4517.838335037231,
+        "avg_agentic_latency_overhead_ms": 0.15876293182373047
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 1,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 2,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 1,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 10,
+        "total_valid_benign": 10
+      }
+    },
+    "P2-10": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.6166666666666667,
+        "valid_live_agentic_decision_rate": 0.6166666666666667,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.23333333333333334,
+        "benign_fpr_explicit": "7/30",
+        "benign_allow_rate": 0.7666666666666667,
+        "median_latency_ms": 1.242995262145996,
+        "p95_latency_ms": 1384.1761827468872,
+        "avg_agentic_latency_overhead_ms": 0.2535162745295344
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    },
+    "P2-50": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.8333333333333334,
+        "valid_live_agentic_decision_rate": 0.8333333333333334,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.6666666666666666,
+        "benign_fpr_explicit": "20/30",
+        "benign_allow_rate": 0.3333333333333333,
+        "median_latency_ms": 0.6248950958251953,
+        "p95_latency_ms": 1692.3816323280334,
+        "avg_agentic_latency_overhead_ms": 0.20411968231201172
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    }
+  },
+  "qwen2.5:0.5b": {
+    "P2-25": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.7166666666666667,
+        "valid_live_agentic_decision_rate": 0.7166666666666667,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.43333333333333335,
+        "benign_fpr_explicit": "13/30",
+        "benign_allow_rate": 0.5666666666666667,
+        "median_latency_ms": 0.9227991104125977,
+        "p95_latency_ms": 1515.1660561561584,
+        "avg_agentic_latency_overhead_ms": 0.22714082584824674
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    },
+    "P1": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.5,
+        "valid_live_agentic_decision_rate": 0.5,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.0,
+        "benign_fpr_explicit": "0/10",
+        "benign_allow_rate": 1.0,
+        "median_latency_ms": 39.18945789337158,
+        "p95_latency_ms": 2470.713949203491,
+        "avg_agentic_latency_overhead_ms": 0.1165628433227539
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 1,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 2,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 1,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 10,
+        "total_valid_benign": 10
+      }
+    },
+    "P2-100": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 1.0,
+        "valid_live_agentic_decision_rate": 1.0,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 1.0,
+        "benign_fpr_explicit": "30/30",
+        "benign_allow_rate": 0.0,
+        "median_latency_ms": 0.638127326965332,
+        "p95_latency_ms": 1.306295394897461,
+        "avg_agentic_latency_overhead_ms": 0.22802352905273438
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    },
+    "P0": {
+      "security": {
+        "true_e2e_asr": 0.1,
+        "deterministic_non_trigger_rate": 0.2,
+        "downstream_exposure_rate": 0.2,
+        "gateway_block_rate": 0.8,
+        "actual_agentic_invocation_rate": 0.4,
+        "valid_live_agentic_decision_rate": 0.4,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.0,
+        "benign_fpr_explicit": "0/10",
+        "benign_allow_rate": 1.0,
+        "median_latency_ms": 79.60855960845947,
+        "p95_latency_ms": 2476.1289477348328,
+        "avg_agentic_latency_overhead_ms": 0.24807453155517578
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 1,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 2,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 1,
+            "asr": 1.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 10,
+        "total_valid_benign": 10
+      }
+    },
+    "P2-0": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.5,
+        "valid_live_agentic_decision_rate": 0.5,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.0,
+        "benign_fpr_explicit": "0/10",
+        "benign_allow_rate": 1.0,
+        "median_latency_ms": 42.229413986206055,
+        "p95_latency_ms": 2819.7514057159424,
+        "avg_agentic_latency_overhead_ms": 0.13976097106933594
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 1,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 2,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 1,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 10,
+        "total_valid_benign": 10
+      }
+    },
+    "P2-10": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.6166666666666667,
+        "valid_live_agentic_decision_rate": 0.6166666666666667,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.23333333333333334,
+        "benign_fpr_explicit": "7/30",
+        "benign_allow_rate": 0.7666666666666667,
+        "median_latency_ms": 0.7184743881225586,
+        "p95_latency_ms": 1202.454936504364,
+        "avg_agentic_latency_overhead_ms": 0.16733118005701014
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    },
+    "P2-50": {
+      "security": {
+        "true_e2e_asr": 0.0,
+        "deterministic_non_trigger_rate": 0.0,
+        "downstream_exposure_rate": 0.0,
+        "gateway_block_rate": 1.0,
+        "actual_agentic_invocation_rate": 0.8333333333333334,
+        "valid_live_agentic_decision_rate": 0.8333333333333334,
+        "provider_error_fail_closed_rate": 0.0,
+        "objective_evaluation_coverage": 1.0
+      },
+      "utility": {
+        "benign_fpr": 0.6666666666666666,
+        "benign_fpr_explicit": "20/30",
+        "benign_allow_rate": 0.3333333333333333,
+        "median_latency_ms": 1.1578798294067383,
+        "p95_latency_ms": 1037.356722354889,
+        "avg_agentic_latency_overhead_ms": 0.3207969665527344
+      },
+      "breakdowns": {
+        "by_family": {
+          "STRUCTURAL_REFORMULATION": {
+            "cases": 3,
+            "asr": 0.0
+          },
+          "HYPHENATION": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "SEMANTIC_CLOAKING": {
+            "cases": 6,
+            "asr": 0.0
+          },
+          "INTRA_WORD_SPACING": {
+            "cases": 9,
+            "asr": 0.0
+          },
+          "CONTEXT_PADDING": {
+            "cases": 3,
+            "asr": 0.0
+          }
+        },
+        "unique_attack_seeds_tested": 8,
+        "total_valid_attacks": 30,
+        "total_valid_benign": 30
+      }
+    }
+  }
+}

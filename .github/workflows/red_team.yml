@@ -1,0 +1,28 @@
+name: Continuous Red Teaming
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # Run at 2 AM every day
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  red-team:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install httpx
+
+      - name: Run Red Team Fuzzer
+        env:
+          HEIMDALL_URL: ${{ secrets.HEIMDALL_URL }} # e.g. https://user-heimdall-space.hf.space
+        run: |
+          python scripts/red_team.py

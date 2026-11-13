@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+*.log
+.DS_Store
+
+data/*.jsonl
+data/review_queue.json
+data/*.db

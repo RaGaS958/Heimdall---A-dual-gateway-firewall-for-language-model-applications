@@ -1,0 +1,6 @@
+{
+  "integrity_status": "PASSED",
+  "integrity_output": "============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.1.1, pluggy-1.6.0\nrootdir: C:\\Users\\ACER\\code\\heimdall\\Heimdall\nplugins: anyio-4.14.2, langsmith-0.10.14, asyncio-1.4.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollected 4 items\n\nresearch\\phase12_1\\tests\\test_integrity.py ....                          [100%]\n\n============================== 4 passed in 0.07s ==============================\n",
+  "historical_status": "PASSED",
+  "historical_output": "============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.1.1, pluggy-1.6.0\nrootdir: C:\\Users\\ACER\\code\\heimdall\\Heimdall\nplugins: anyio-4.14.2, langsmith-0.10.14, asyncio-1.4.0\nasyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function\ncollected 12 items\n\n..\\harness\\test_audit_regressions.py ..XXXX.X..xx                        [100%]\n\n=================== 5 passed, 2 xfailed, 5 xpassed in 0.86s ===================\n"
+}

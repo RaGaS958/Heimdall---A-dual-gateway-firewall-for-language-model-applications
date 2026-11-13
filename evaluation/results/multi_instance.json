@@ -1,0 +1,51 @@
+{
+  "rate_limiter_backend": [
+    "redis",
+    "redis"
+  ],
+  "shared_rate_limit": {
+    "limit": 20,
+    "sent": 30,
+    "allowed": 20,
+    "refused_429": 10,
+    "pass": true
+  },
+  "session_token_across_instances": {
+    "status_on_b": 200,
+    "same_session": true,
+    "pass": true,
+    "detail": null
+  },
+  "load_scan_single_instance": [
+    {
+      "concurrency": 1,
+      "requests": 600,
+      "errors": 0,
+      "requests_per_second": 166.0,
+      "p50_ms": 5.8,
+      "p95_ms": 7.6,
+      "p99_ms": 8.7,
+      "mean_ms": 6.0
+    },
+    {
+      "concurrency": 8,
+      "requests": 600,
+      "errors": 0,
+      "requests_per_second": 118.1,
+      "p50_ms": 59.6,
+      "p95_ms": 140.7,
+      "p99_ms": 189.9,
+      "mean_ms": 67.5
+    },
+    {
+      "concurrency": 32,
+      "requests": 600,
+      "errors": 0,
+      "requests_per_second": 115.8,
+      "p50_ms": 268.5,
+      "p95_ms": 371.5,
+      "p99_ms": 418.7,
+      "mean_ms": 270.5
+    }
+  ]
+}

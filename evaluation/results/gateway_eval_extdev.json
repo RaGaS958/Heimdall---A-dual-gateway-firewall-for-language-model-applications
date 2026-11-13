@@ -1,0 +1,146 @@
+{
+  "suite": "extdev",
+  "decision_rule": "hard signal => BLOCK (arbiter unavailable)",
+  "groups": {
+    "ext_dev/attack": {
+      "n": 807,
+      "before": 313,
+      "after": 722,
+      "gained": 420,
+      "lost": 11,
+      "mcnemar_p": 7.776593665380072e-109,
+      "before_ci": [
+        0.3548449527680773,
+        0.4219301516404681
+      ],
+      "after_ci": [
+        0.8715899700328481,
+        0.9140136680431549
+      ]
+    },
+    "ext_dev/benign": {
+      "n": 993,
+      "before": 0,
+      "after": 0,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.0,
+        0.0038536307324206517
+      ],
+      "after_ci": [
+        0.0,
+        0.0038536307324206517
+      ]
+    }
+  },
+  "by_group": {
+    "ext_dev/attack/garak_dan": {
+      "n": 8,
+      "before": 7,
+      "after": 8,
+      "gained": 1,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.5291118149439162,
+        0.9775825088000282
+      ],
+      "after_ci": [
+        0.6755924316585925,
+        1.0
+      ]
+    },
+    "ext_dev/attack/garak_inthewild_jailbreak": {
+      "n": 327,
+      "before": 194,
+      "after": 281,
+      "gained": 97,
+      "lost": 10,
+      "mcnemar_p": 4.8165830075002e-19,
+      "before_ci": [
+        0.5392462446080819,
+        0.6451320984395662
+      ],
+      "after_ci": [
+        0.817458687487239,
+        0.8928513226143566
+      ]
+    },
+    "ext_dev/attack/garak_sysprompt_extraction": {
+      "n": 12,
+      "before": 7,
+      "after": 12,
+      "gained": 5,
+      "lost": 0,
+      "mcnemar_p": 0.0625,
+      "before_ci": [
+        0.31951131084242423,
+        0.8067396875653928
+      ],
+      "after_ci": [
+        0.757505990446902,
+        1.0
+      ]
+    },
+    "ext_dev/attack/tensortrust_extraction": {
+      "n": 226,
+      "before": 24,
+      "after": 204,
+      "gained": 181,
+      "lost": 1,
+      "mcnemar_p": 5.97065358821865e-53,
+      "before_ci": [
+        0.07240671963667591,
+        0.1531464035188382
+      ],
+      "after_ci": [
+        0.8570163388537064,
+        0.9348338385940261
+      ]
+    },
+    "ext_dev/attack/tensortrust_hijacking": {
+      "n": 234,
+      "before": 81,
+      "after": 217,
+      "gained": 136,
+      "lost": 0,
+      "mcnemar_p": 2.2958874039497803e-41,
+      "before_ci": [
+        0.2881264405101878,
+        0.40915089566720925
+      ],
+      "after_ci": [
+        0.8867467569566925,
+        0.9541495314394268
+      ]
+    },
+    "ext_dev/benign/alpaca": {
+      "n": 993,
+      "before": 0,
+      "after": 0,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.0,
+        0.0038536307324206517
+      ],
+      "after_ci": [
+        0.0,
+        0.0038536307324206517
+      ]
+    }
+  },
+  "latency_before": {
+    "p50_ms": 0.331,
+    "p95_ms": 8.953,
+    "max_ms": 24.898
+  },
+  "latency_after": {
+    "p50_ms": 1.8655,
+    "p95_ms": 73.689,
+    "max_ms": 285.811
+  }
+}

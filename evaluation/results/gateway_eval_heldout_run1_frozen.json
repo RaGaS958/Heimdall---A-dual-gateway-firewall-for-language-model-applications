@@ -1,0 +1,274 @@
+{
+  "suite": "heldout",
+  "decision_rule": "hard signal => BLOCK (arbiter unavailable)",
+  "groups": {
+    "heimdall_v1/attack": {
+      "n": 51,
+      "before": 49,
+      "after": 42,
+      "gained": 1,
+      "lost": 8,
+      "mcnemar_p": 0.0390625,
+      "before_ci": [
+        0.8678369424018635,
+        0.989178916744612
+      ],
+      "after_ci": [
+        0.6974585736294797,
+        0.904275965771237
+      ]
+    },
+    "heimdall_v1/benign": {
+      "n": 17,
+      "before": 5,
+      "after": 4,
+      "gained": 1,
+      "lost": 2,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.13279989526269428,
+        0.5313311024822815
+      ],
+      "after_ci": [
+        0.09555044255436916,
+        0.4726179831177426
+      ]
+    },
+    "phase12/attack": {
+      "n": 72,
+      "before": 12,
+      "after": 51,
+      "gained": 39,
+      "lost": 0,
+      "mcnemar_p": 3.637978807091713e-12,
+      "before_ci": [
+        0.0979937120128515,
+        0.26910707022384484
+      ],
+      "after_ci": [
+        0.5949425723702729,
+        0.8006194387317919
+      ]
+    },
+    "phase12/benign": {
+      "n": 100,
+      "before": 0,
+      "after": 0,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.0,
+        0.03699349876899627
+      ],
+      "after_ci": [
+        0.0,
+        0.03699349876899627
+      ]
+    }
+  },
+  "by_group": {
+    "heimdall_v1/attack/CONTEXT_MANIPULATION": {
+      "n": 3,
+      "before": 3,
+      "after": 3,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.4385029643606803,
+        1.0
+      ],
+      "after_ci": [
+        0.4385029643606803,
+        1.0
+      ]
+    },
+    "heimdall_v1/attack/ENCODING_EVASION": {
+      "n": 1,
+      "before": 1,
+      "after": 1,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.20654931179180275,
+        1.0
+      ],
+      "after_ci": [
+        0.20654931179180275,
+        1.0
+      ]
+    },
+    "heimdall_v1/attack/INDIRECT_INJECTION": {
+      "n": 2,
+      "before": 2,
+      "after": 2,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.34238022395464934,
+        1.0
+      ],
+      "after_ci": [
+        0.34238022395464934,
+        1.0
+      ]
+    },
+    "heimdall_v1/attack/INSTRUCTION_OVERRIDE": {
+      "n": 16,
+      "before": 16,
+      "after": 15,
+      "gained": 0,
+      "lost": 1,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.8063923170025952,
+        1.0
+      ],
+      "after_ci": [
+        0.7167126220185179,
+        0.9888806553587528
+      ]
+    },
+    "heimdall_v1/attack/JAILBREAK": {
+      "n": 7,
+      "before": 6,
+      "after": 5,
+      "gained": 1,
+      "lost": 2,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.48687216786077503,
+        0.974320375942176
+      ],
+      "after_ci": [
+        0.358934449531054,
+        0.9177810767507166
+      ]
+    },
+    "heimdall_v1/attack/PERSONA_INJECTION": {
+      "n": 12,
+      "before": 12,
+      "after": 9,
+      "gained": 0,
+      "lost": 3,
+      "mcnemar_p": 0.25,
+      "before_ci": [
+        0.757505990446902,
+        1.0
+      ],
+      "after_ci": [
+        0.4676946629183366,
+        0.9110583323051143
+      ]
+    },
+    "heimdall_v1/attack/SYSTEM_EXTRACTION": {
+      "n": 5,
+      "before": 4,
+      "after": 4,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.375534627029995,
+        0.9637758917743693
+      ],
+      "after_ci": [
+        0.375534627029995,
+        0.9637758917743693
+      ]
+    },
+    "heimdall_v1/attack/TOOL_WEAPONIZATION": {
+      "n": 5,
+      "before": 5,
+      "after": 3,
+      "gained": 0,
+      "lost": 2,
+      "mcnemar_p": 0.5,
+      "before_ci": [
+        0.5655175313406071,
+        1.0
+      ],
+      "after_ci": [
+        0.23072427940911852,
+        0.8823792268590027
+      ]
+    },
+    "heimdall_v1/benign/benign": {
+      "n": 17,
+      "before": 5,
+      "after": 4,
+      "gained": 1,
+      "lost": 2,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.13279989526269428,
+        0.5313311024822815
+      ],
+      "after_ci": [
+        0.09555044255436916,
+        0.4726179831177426
+      ]
+    },
+    "phase12/attack/ORIGINAL": {
+      "n": 12,
+      "before": 12,
+      "after": 12,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.757505990446902,
+        1.0
+      ],
+      "after_ci": [
+        0.757505990446902,
+        1.0
+      ]
+    },
+    "phase12/attack/UNSEEN": {
+      "n": 60,
+      "before": 0,
+      "after": 39,
+      "gained": 39,
+      "lost": 0,
+      "mcnemar_p": 3.637978807091713e-12,
+      "before_ci": [
+        0.0,
+        0.060171853034227174
+      ],
+      "after_ci": [
+        0.5236261874086521,
+        0.7583222566810799
+      ]
+    },
+    "phase12/benign/benign": {
+      "n": 100,
+      "before": 0,
+      "after": 0,
+      "gained": 0,
+      "lost": 0,
+      "mcnemar_p": 1.0,
+      "before_ci": [
+        0.0,
+        0.03699349876899627
+      ],
+      "after_ci": [
+        0.0,
+        0.03699349876899627
+      ]
+    }
+  },
+  "latency_before": {
+    "p50_ms": 0.19,
+    "p95_ms": 0.281,
+    "max_ms": 0.747
+  },
+  "latency_after": {
+    "p50_ms": 2.3,
+    "p95_ms": 5.007,
+    "max_ms": 6.099
+  }
+}

@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Middleware tests
+        working-directory: heimdall-middleware
+        env:
+          HEIMDALL_ENV: test
+          EMBEDDINGS_ENABLED: "false"
+          RATE_LIMIT_CHAT: "100000"
+          RATE_LIMIT_SCAN: "100000"
+          RATE_LIMIT_SESSION: "100000"
+          RATE_LIMIT_ADMIN: "100000"
+          RATE_LIMIT_DEFAULT: "100000"
+        run: |
+          pip install -r requirements-dev.txt
+          pytest tests -q
+      - name: LLM backend tests
+        working-directory: multi-llm-backend
+        run: |
+          pip install -r requirements.txt
+          pytest -q
+      - name: Detection regression gate
+        env:
+          EMBEDDINGS_ENABLED: "false"
+        run: |
+          python evaluation/run_gateway_eval.py --suites dev
+          python evaluation/check_regression.py
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - working-directory: heimdall-frontend
+        run: |
+          npm ci
+          npm audit --omit=dev
+          npm run build

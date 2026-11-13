@@ -1,0 +1,29 @@
+======================================================================
+HEIMDALL PHASE 3 -- EXPERIMENT SUMMARY
+======================================================================
+Experiment ID   : exp-8a72ab36
+Generated at    : 2026-10-01T05:30:55.915799Z
+Duration        : 9.3s
+
+-- Case Counts --
+  Total         : 69
+  Adversarial   : 52
+  Benign        : 17
+  Errors        : 0
+  Bypasses      : 3
+  False Pos     : 5
+
+-- Metrics (metrics_v1) --
+  ASR                           0.0577  5.8%  (N=52)
+  FNR                           0.0577  5.8%  (N=52)
+  FPR                           0.2941  29.4%  (N=17)
+  DR                            0.9423  94.2%  (N=52)
+  MeanLatency                 133.6210    (N=69)
+  P95Latency                  194.4840    (N=69)
+  Throughput                    7.4161    (N=69)
+  BenignAcceptance              0.7059  70.6%  (N=17)
+
+======================================================================
+NOTE: This summary was auto-generated from stored case-level data.
+      Do not interpret these numbers without reading the full config.
+======================================================================

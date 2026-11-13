@@ -1,0 +1,57 @@
+{
+  "P0": {
+    "status": "EVALUATED",
+    "runs": 1,
+    "model": "qwen2.5:0.5b"
+  },
+  "P1": {
+    "status": "EVALUATED",
+    "runs": 1,
+    "model": "qwen2.5:0.5b"
+  },
+  "P2-0": {
+    "status": "EVALUATED",
+    "runs": 1,
+    "model": "qwen2.5:0.5b"
+  },
+  "P2-10": {
+    "status": "EVALUATED",
+    "runs": 3,
+    "model": "qwen2.5:0.5b"
+  },
+  "P2-25": {
+    "status": "EVALUATED",
+    "runs": 3,
+    "model": "qwen2.5:0.5b"
+  },
+  "P2-50": {
+    "status": "EVALUATED",
+    "runs": 3,
+    "model": "qwen2.5:0.5b"
+  },
+  "P2-100": {
+    "status": "EVALUATED",
+    "runs": 3,
+    "model": "qwen2.5:0.5b"
+  },
+  "ABLATION_L1": {
+    "status": "EVALUATED",
+    "runs": 1,
+    "model": "qwen2.5:0.5b"
+  },
+  "ABLATION_L2": {
+    "status": "EVALUATED",
+    "runs": 1,
+    "model": "qwen2.5:0.5b"
+  },
+  "ABLATION_L3": {
+    "status": "EVALUATED",
+    "runs": 1,
+    "model": "qwen2.5:0.5b"
+  },
+  "ABLATION_L4": {
+    "status": "EVALUATED",
+    "runs": 1,
+    "model": "qwen2.5:0.5b"
+  }
+}

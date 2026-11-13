@@ -1,0 +1,25 @@
+{
+  "git_commit": "ef9c065504e2c574e4b35a8e26d28eb30871e2d7",
+  "timestamp": "2026-10-09T06:11:34.303627",
+  "models": {
+    "downstream": "qwen2.5:0.5b",
+    "agentic": "Groq/Gemini (mocked failing closed)"
+  },
+  "datasets": {
+    "attack": "research/phase12/datasets/attack_manifest.json",
+    "benign": "research/phase12/datasets/benign_manifest.json"
+  },
+  "configurations": [
+    "P0",
+    "P1",
+    "P2-0",
+    "P2-10",
+    "P2-25",
+    "P2-50",
+    "P2-100",
+    "ABLATION_L1",
+    "ABLATION_L2",
+    "ABLATION_L3",
+    "ABLATION_L4"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "sources": {
+    "tensor_trust": "HumanCompatibleAI/tensor-trust-data benchmarks v1",
+    "garak": "garak 0.17.1 data files",
+    "alpaca": "tatsu-lab/stanford_alpaca alpaca_data.json"
+  },
+  "split_rule": "first byte of sha256(text) even => dev, odd => test",
+  "dropped": {
+    "empty_or_duplicate": 435,
+    "over_length": 4
+  },
+  "splits": {
+    "dev": {
+      "sha256": "9d5fefc3046b0c4b62a556bd3f1181103662438c4648b0797e74334526433081",
+      "counts": {
+        "attack/garak_dan": 8,
+        "attack/garak_inthewild_jailbreak": 327,
+        "attack/garak_sysprompt_extraction": 12,
+        "attack/tensortrust_extraction": 226,
+        "attack/tensortrust_hijacking": 234,
+        "benign/alpaca": 993
+      }
+    },
+    "test": {
+      "sha256": "de0acc30a7138425388f2fa52ac76105eaf8d40aa618165a01412d564f4bf602",
+      "counts": {
+        "attack/garak_dan": 6,
+        "attack/garak_inthewild_jailbreak": 319,
+        "attack/garak_sysprompt_extraction": 16,
+        "attack/tensortrust_extraction": 212,
+        "attack/tensortrust_hijacking": 255,
+        "benign/alpaca": 1007
+      }
+    }
+  }
+}

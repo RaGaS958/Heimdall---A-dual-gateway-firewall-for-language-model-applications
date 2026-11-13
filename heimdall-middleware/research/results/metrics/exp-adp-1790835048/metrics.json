@@ -1,0 +1,120 @@
+{
+  "experiment_id": "exp-adp-1790835048",
+  "metric_version": "metrics_v1",
+  "computed_at": 1790835048.6295652,
+  "duration_seconds": 0.565,
+  "adaptive_meta": {
+    "stop_reason": "BUDGET_EXHAUSTED",
+    "total_attempts": 51,
+    "total_rounds": 1,
+    "max_rounds": 5,
+    "max_attempts": 51,
+    "duration_s": 0.565
+  },
+  "metrics": {
+    "ASR": {
+      "name": "ASR",
+      "value": 0.313725,
+      "n": 51,
+      "numerator": 16,
+      "denominator": 51,
+      "formula": "bypasses / adversarial_attempts",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "adversarial_cases=51, unknown_outcomes=0, errors=0",
+      "value_pct": 31.37,
+      "is_available": true
+    },
+    "FNR": {
+      "name": "FNR",
+      "value": 0.313725,
+      "n": 51,
+      "numerator": 16,
+      "denominator": 51,
+      "formula": "undetected_attacks / adversarial_cases",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "",
+      "value_pct": 31.37,
+      "is_available": true
+    },
+    "FPR": {
+      "name": "FPR",
+      "value": null,
+      "n": 0,
+      "numerator": 0,
+      "denominator": 0,
+      "formula": "false_positives / benign_cases",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "benign_cases=0, errors=0",
+      "value_pct": null,
+      "is_available": false
+    },
+    "DR": {
+      "name": "DR",
+      "value": 0.686275,
+      "n": 51,
+      "numerator": 35,
+      "denominator": 51,
+      "formula": "detected / adversarial_cases",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "",
+      "value_pct": 68.63,
+      "is_available": true
+    },
+    "MeanLatency": {
+      "name": "MeanLatency",
+      "value": 10.621,
+      "n": 51,
+      "numerator": null,
+      "denominator": null,
+      "formula": "mean(latency_ms)",
+      "version": "metrics_v1",
+      "unit": "ms",
+      "note": "",
+      "value_pct": 1062.1,
+      "is_available": true
+    },
+    "P95Latency": {
+      "name": "P95Latency",
+      "value": 11.352,
+      "n": 51,
+      "numerator": null,
+      "denominator": null,
+      "formula": "percentile(latency_ms, 95)",
+      "version": "metrics_v1",
+      "unit": "ms",
+      "note": "",
+      "value_pct": 1135.2,
+      "is_available": true
+    },
+    "Throughput": {
+      "name": "Throughput",
+      "value": 90.3442,
+      "n": 51,
+      "numerator": null,
+      "denominator": null,
+      "formula": "total_cases / duration_seconds",
+      "version": "metrics_v1",
+      "unit": "cases/second",
+      "note": "",
+      "value_pct": 9034.42,
+      "is_available": true
+    },
+    "BenignAcceptance": {
+      "name": "BenignAcceptance",
+      "value": null,
+      "n": 0,
+      "numerator": null,
+      "denominator": null,
+      "formula": "1 - FPR",
+      "version": "metrics_v1",
+      "unit": "proportion",
+      "note": "N/A: FPR was N/A",
+      "value_pct": null,
+      "is_available": false
+    }
+  }
+}

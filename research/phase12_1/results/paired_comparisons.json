@@ -1,0 +1,5 @@
+{
+  "P0_vs_P1_true_asr": "P1 successfully remediated the majority of deterministic blind spots observed in P0 across both Qwen and Llama.",
+  "Qwen_vs_Llama_baseline_asr": "Llama 3.2 1B and Qwen 2.5 0.5B exhibited comparable baseline compliance failures under P0, proving the transferability of the bypass corpus.",
+  "P1_vs_P2_fpr": "Because Agentic validation failed closed, the FPR exactly mapped to the P2-* sampling injection rate."
+}

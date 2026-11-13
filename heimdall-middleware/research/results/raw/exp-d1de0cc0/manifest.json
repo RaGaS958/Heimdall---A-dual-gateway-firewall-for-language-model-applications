@@ -1,0 +1,88 @@
+{
+  "experiment_id": "exp-d1de0cc0",
+  "experiment_version": "4.0",
+  "name": "ExpA_B5 \u2014 Full HEIMDALL (No Immune)",
+  "description": "CONFIRMATORY. Full HEIMDALL pipeline with all layers active. Immune loop externally disabled (not via Immune API). This is the primary Phase 4 defense reference. H-01: B5 should produce lower ASR than B0. H-02: B5 should produce lower ASR than B1 and B2. RQ1: Primary effectiveness measurement.\n",
+  "config_hash": "3610df81f1edcc3d3630dee7ef781e4b12f7652cc5133455679342dc59e0d47d",
+  "created_at": 1790770802.9221878,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "mock",
+    "model": "mock-v1",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B5",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT",
+      "AGENTIC",
+      "O1_CACHE",
+      "O2_LEAKAGE",
+      "O3_BEHAVIOR",
+      "O4_TOOL"
+    ],
+    "disabled_layers": [],
+    "configuration": {
+      "baseline": "B5",
+      "description": "Full HEIMDALL \u2014 all layers active, Immune disabled"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 3,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider \u2014 keyword-based verdicts",
+      "3 repetitions with seed 42, 43, 44 for reproducibility check",
+      "Immune loop disabled externally",
+      "Prior result: exp-7f6b4560 (Phase 3 reference, seed=42)"
+    ]
+  }
+}

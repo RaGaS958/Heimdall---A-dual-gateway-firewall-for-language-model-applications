@@ -1,0 +1,12 @@
+name: strict
+version: 1
+description: "For customer-facing bots handling sensitive data"
+overrides:
+  ml_classifier_threshold: 0.55
+  intent_similarity_threshold: 0.60
+  agentic_trigger_flag_count: 1
+  agentic_trigger_severity: 5
+  warm_cache_flag_threshold: 0.75
+disabled_layers: []
+extra_keywords:
+  l3: ["proprietary internal term one", "proprietary internal term two"]

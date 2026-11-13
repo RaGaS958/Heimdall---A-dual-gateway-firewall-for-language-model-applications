@@ -1,0 +1,83 @@
+{
+  "experiment_id": "exp-ade06bb1",
+  "experiment_version": "4.0",
+  "name": "ExpB_Ablation_AGENTIC \u2014 Agentic Core OFF",
+  "description": "EXPLORATORY. Ablation: AGENTIC layer disabled. H-03: Individual layer ablation changes ASR vs B5 full. RQ4: Security layer contribution measurement.\n",
+  "config_hash": "5506956152329f19f0186d843036863811df07600a6508c269821dc5cc703f04",
+  "created_at": 1791106336.1905344,
+  "dataset": {
+    "name": "heimdall_v1",
+    "version": "v1.0",
+    "source": "HEIMDALL_INTERNAL_V1",
+    "case_count": 69,
+    "adversarial_count": 52,
+    "benign_count": 17,
+    "categories": [
+      "BENIGN",
+      "CONTEXT_MANIPULATION",
+      "ENCODING_EVASION",
+      "INDIRECT_INJECTION",
+      "INSTRUCTION_OVERRIDE",
+      "JAILBREAK",
+      "PERSONA_INJECTION",
+      "SYSTEM_EXTRACTION",
+      "TOOL_WEAPONIZATION"
+    ],
+    "created_date": "2026-09-25",
+    "license": "HEIMDALL_INTERNAL"
+  },
+  "model": {
+    "provider": "local",
+    "model": "heimdall-g1-pipeline",
+    "version": "mock-deterministic-1.0",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "system_config": ""
+  },
+  "defense": {
+    "baseline": "B3",
+    "version": 1,
+    "enabled_layers": [
+      "L0_CACHE",
+      "L1_PATTERN",
+      "L2_SANITIZE",
+      "L3_ML",
+      "L4_INTENT"
+    ],
+    "disabled_layers": [
+      "AGENTIC"
+    ],
+    "configuration": {
+      "baseline": "B3",
+      "description": "Dual Gateway \u2014 AGENTIC disabled (same as B3)"
+    }
+  },
+  "attacker": {
+    "mode": "static",
+    "max_rounds": 1,
+    "max_attempts": 69,
+    "exploration_ratio": 0.3
+  },
+  "mutation": {
+    "enabled": false,
+    "version": "1.0",
+    "families": [],
+    "techniques": [],
+    "n_per_technique": 1
+  },
+  "environment": {
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "context": "",
+    "tool_configuration": {}
+  },
+  "evaluation": {
+    "repetitions": 1,
+    "random_seed": 42,
+    "metric_version": "metrics_v1",
+    "limitations": [
+      "Mock provider",
+      "AGENTIC ablation uses B3 configuration (G1+G2 without agentic)"
+    ]
+  }
+}
