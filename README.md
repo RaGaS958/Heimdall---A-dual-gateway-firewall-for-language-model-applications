@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/logo/heimdall-lockup-on-light-bg.svg" alt="Heimdall" height="56"></p>
+<p align="center"><img src="assets/logo/heimdall-lockup-on-dark-bg.svg" alt="Heimdall" height="56"></p>
 
 <h3 align="center">A dual-gateway firewall for language-model applications</h3>
 
