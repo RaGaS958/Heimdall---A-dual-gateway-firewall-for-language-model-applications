@@ -8,8 +8,9 @@ and streams each layer's decision to the browser as it happens.
 </p>
 
 <p align="center">
-<a href="https://heimdall-a-dual-gateway-firewall-fo.vercel.app">Live console</a> ·
-<a href="https://ragas111-heimdall-middleware.hf.space/health">Middleware health</a> ·
+<a href="https://heimdall-a-dual-gateway-firewall-fo.vercel.app">frontend</a> ·
+<a href="https://ragas111-heimdall-middleware.hf.space/health">Middleware</a> ·
+  <a href="https://huggingface.co/spaces/RaGaS111/multi-llm-backend">Backend</a> ·
 <a href="#results">Results</a> ·
 <a href="#research">Research</a> ·
 <a href="#run-it">Run it</a>
